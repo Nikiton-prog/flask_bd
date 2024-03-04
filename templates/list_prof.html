@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Список профессий</h3>
+{% if marker == "ol" %}
+   <ol>
+        {% for item in data %}
+            <li> {{item}} </li>
+        {% endfor %}
+   </ol>
+  {% elif marker == "ul" %}
+        <p> </p>
+ {% else %}
+      <p>  сообщение о неверном параметре </p>
+ {% endif %}
+{% endblock %}
