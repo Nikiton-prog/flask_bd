@@ -13,6 +13,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
+
 @login_manager.user_loader
 def load_user(user_id):
     db_sess = db_session.create_session()
@@ -30,6 +31,7 @@ def index():
     print(jobs)
     return render_template("index.html", jobs=jobs)
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -43,6 +45,7 @@ def login():
                                message="Неправильный логин или пароль",
                                form=form)
     return render_template('login.html', title='Авторизация', form=form)
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def reqister():
@@ -69,7 +72,8 @@ def reqister():
         return redirect('/')
     return render_template('register.html', title='Регистрация', form=form)
 
-@app.route('/addjob',  methods=['GET', 'POST'])
+
+@app.route('/addjob', methods=['GET', 'POST'])
 @login_required
 def addjob():
     form = JobsForm()
@@ -86,6 +90,7 @@ def addjob():
         return redirect('/')
     return render_template('addjob.html', title='Добавление новости',
                            form=form)
+
 
 @app.route('/logout')
 @login_required
