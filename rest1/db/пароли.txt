@@ -1,0 +1,6 @@
+surname = "Scott" hashed_password = "cap"
+surname = "Weir" hashed_password = "sci"
+surname = "Watny" hashed_password = "bio"
+surname = "Kapoor" hashed_password = "pilot"
+surname = "Sanders" hashed_password = "comp"
+surname = "Bean" hashed_password = "build"
